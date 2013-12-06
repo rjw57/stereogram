@@ -41,13 +41,18 @@ module.exports = function(grunt) {
         },
       },
     },
+
+    jshint: {
+      all: ['Gruntfile.js', 'app/js/*.js'],
+    },
   });
 
   // Load plugins
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.loadNpmTasks('grunt-haml');
 
   // Default tasks
-  grunt.registerTask('default', ['requirejs', 'copy', 'haml']);
+  grunt.registerTask('default', ['jshint', 'requirejs', 'copy', 'haml']);
 };
