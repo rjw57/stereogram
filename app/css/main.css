@@ -1,6 +1,8 @@
 /* Import Bootstrap */
 @import url("../../vendor/bootstrap/css/bootstrap.css");
 
-body .top-level {
-  margin-top: 120px;
-}
+.texture-group .active .texture { background-color: #428bca; }
+.texture-group .texture { width: 165px; }
+
+#footer { height: 60px; background-color: #f5f5f5; margin: 20px 0; }
+#footer .container p { margin: 20px 0; }
