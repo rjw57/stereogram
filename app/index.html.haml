@@ -21,7 +21,11 @@
               %a{ href: '#' } Home
 
     %div.container.top-level
-      %h1 Hello, world
+      %canvas#magic-eye
+      %p
+        %img#depth-image{ src: 'img/depth/bottles.jpg' }
+      %p
+        %img#texture-image{ src: 'img/pattern/rock.png' }
 
     / Load JavaScript for main page
     %script{ src: 'js/main.js' }
