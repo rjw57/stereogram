@@ -1,6 +1,6 @@
 /* jshint strict: true */
 
-require(['lib/magiceye', 'bootstrap'], function(magiceye) {
+require(['lib/magiceye'], function(magiceye) {
   'use strict';
 
   var depthImg = document.getElementById('depth-image');
