@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "Webapp for creating magic eye pictures",
   "license": "MIT",
+  "repository": { "type": "git", "url": "https://github.com/rjw57/magic-eye-generator" },
   "author": {
     "name": "Rich Wareham",
     "email": "rich@richwareham.com",
@@ -10,12 +11,11 @@
   },
   "devDependencies": {
     "grunt": "~0.4.2",
-    "grunt-contrib-jshint": "~0.6.3",
-    "grunt-contrib-nodeunit": "~0.2.0",
-    "grunt-contrib-uglify": "~0.2.7",
     "grunt-cli": "~0.1.11",
-    "grunt-haml": "~0.8.0",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-contrib-jshint": "~0.6.3",
     "grunt-contrib-requirejs": "~0.4.1",
-    "grunt-contrib-copy": "~0.4.1"
+    "grunt-contrib-uglify": "~0.2.7",
+    "grunt-haml": "~0.8.0"
   }
 }
