@@ -35,7 +35,7 @@ module.exports = function(grunt) {
           optimize: 'uglify2',
           generateSourceMaps: true,
           preserveLicenseComments: false,
-          fileExclusionRegExp: /.haml$/,
+          fileExclusionRegExp: /(.haml$)|(^\.)/,
           modules: [
             { name: 'main', include: ['requireLib'] },
           ],
@@ -46,13 +46,31 @@ module.exports = function(grunt) {
     jshint: {
       all: ['Gruntfile.js', 'app/js/*.js', 'lib/*.js'],
     },
+
+    clean: ['build/'],
   });
 
   // Load plugins
+  grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.loadNpmTasks('grunt-haml');
+
+  // GitHub pages
+  grunt.registerTask('ghp-import', function() {
+    var done = this.async(), self = this;
+
+    this.requires('default');
+
+    grunt.util.spawn({
+      cmd: 'ghp-import', args: ['build/']
+    }, function(error, result, code) {
+      if(error) return grunt.log.error(error.message);
+      done();
+    });
+  });
+  grunt.registerTask('ghp', ['clean', 'default', 'ghp-import']);
 
   // Default tasks
   grunt.registerTask('default', ['jshint', 'requirejs', 'copy', 'haml']);
