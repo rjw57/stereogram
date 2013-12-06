@@ -1,0 +1,9 @@
+# common editor backup files
+*~
+.*.swp
+
+# npm installed modules
+node_modules
+
+# output directory
+build/
