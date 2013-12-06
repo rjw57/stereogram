@@ -20,13 +20,14 @@ module.exports = function(grunt) {
       compile: {
         options: {
           appDir: 'app/',
-          baseUrl: '.',
+          baseUrl: 'js/',
           dir: 'build/',
           keepBuildDir: 'true',
           paths: {
-            jquery: '../vendor/jquery/jquery-2.0.3',
-            bootstrap: '../vendor/bootstrap/js/bootstrap',
-            requireLib:  '../vendor/require/require',
+            jquery: '../../vendor/jquery/jquery-2.0.3',
+            bootstrap: '../../vendor/bootstrap/js/bootstrap',
+            requireLib:  '../../vendor/require/require',
+            lib: '../../lib',
           },
           shim: {
             bootstrap: { deps: ['jquery'] },
@@ -36,14 +37,14 @@ module.exports = function(grunt) {
           preserveLicenseComments: false,
           fileExclusionRegExp: /.haml$/,
           modules: [
-            { name: 'js/main', include: ['requireLib'] },
+            { name: 'main', include: ['requireLib'] },
           ],
         },
       },
     },
 
     jshint: {
-      all: ['Gruntfile.js', 'app/js/*.js'],
+      all: ['Gruntfile.js', 'app/js/*.js', 'lib/*.js'],
     },
   });
 
