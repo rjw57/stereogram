@@ -7,7 +7,8 @@ css/main.css
 js/main.js
 ----------------
 /home/rjw57/git/magic-eye-creator/vendor/require/require.js
+/home/rjw57/git/magic-eye-creator/vendor/angular/angular.js
 /home/rjw57/git/magic-eye-creator/lib/magiceye.js
-/home/rjw57/git/magic-eye-creator/vendor/jquery/jquery-2.0.3.js
-/home/rjw57/git/magic-eye-creator/vendor/bootstrap/js/bootstrap.js
+/home/rjw57/git/magic-eye-creator/lib/textures-component.js
+/home/rjw57/git/magic-eye-creator/lib/stereogram-app.js
 js/main.js
