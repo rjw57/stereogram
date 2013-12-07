@@ -18,6 +18,11 @@ module.exports = function(grunt) {
       assets: {
         files: [ { expand: true, src: 'vendor/bootstrap/fonts/*', dest: 'build/' } ],
       },
+
+      // Copy require.js
+      require: {
+        files: [ { src: 'vendor/require/require.js', dest: 'build/' } ],
+      },
     },
 
     requirejs: {
@@ -30,7 +35,6 @@ module.exports = function(grunt) {
           paths: {
             jquery: '../../vendor/jquery/jquery-2.0.3',
             bootstrap: '../../vendor/bootstrap/js/bootstrap',
-            requireLib:  '../../vendor/require/require',
             angular:  '../../vendor/angular/angular',
             lib: '../../lib',
           },
@@ -43,7 +47,13 @@ module.exports = function(grunt) {
           preserveLicenseComments: false,
           fileExclusionRegExp: /(.haml$)|(^\.)/,
           modules: [
-            { name: 'main', include: ['requireLib'] },
+            { name: 'main' },
+            {
+              name: 'stereogram-worker',
+              override: {
+                wrap: { start: 'importScripts("../vendor/require/require.js")', },
+              },
+            },
           ],
         },
       },
