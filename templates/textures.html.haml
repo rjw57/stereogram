@@ -1,1 +1,7 @@
-%h1 Test, {{ src }}
+-# Rationale for grid. Thumbnail images are 128x128 px which, with a 30px
+-# gutter and 5 px border, turns into a horizontal width of arount 170px. On
+-# a small screen, 750 px, there is room for around 4 per row. On a large
+-# screen, 1170 px, about 6 per-row.
+.container.texture-group
+  .row
+    .hello{ ng-transclude: true }
