@@ -7,43 +7,15 @@
   %body
     .container
       %h2 Background texture
-      -# Rationale for grid. Thumbnail images are 128x128 px which, with a 30px
-      -# gutter and 5 px border, turns into a horizontal width of arount 170px. On
-      -# a small screen, 750 px, there is room for around 4 per row. On a large
-      -# screen, 1170 px, about 6 per-row.
-      .container.texture-group{ data-group: 'texture' }
-        .row
-          .col-xs-4.col-sm-3.col-md-2.col-lg-2
-            %a.active{ href: '#', data-texture: 'img/pattern/cloth025.jpg' }
-              %img.texture.img-thumbnail.img-responsive{ src: 'img/pattern/sq/cloth025.jpg' }
-          .col-xs-4.col-sm-3.col-md-2.col-lg-2
-            %a{ href: '#', data-texture: 'img/pattern/rock.png' }
-              %img.texture.img-thumbnail.img-responsive{ src: 'img/pattern/sq/rock.png' }
-          .col-xs-4.col-sm-3.col-md-2.col-lg-2
-            %a{ href: '#', data-texture: 'img/pattern/natfl003.jpg' }
-              %img.texture.img-thumbnail.img-responsive{ src: 'img/pattern/sq/natfl003.jpg' }
-          .col-xs-4.col-sm-3.col-md-2.col-lg-2
-            %a{ href: '#', data-texture: 'img/pattern/natfl013.jpg' }
-              %img.texture.img-thumbnail.img-responsive{ src: 'img/pattern/sq/natfl013.jpg' }
-          .col-xs-4.col-sm-3.col-md-2.col-lg-2
-            %a{ href: '#', data-texture: 'img/pattern/natfl049.jpg' }
-              %img.texture.img-thumbnail.img-responsive{ src: 'img/pattern/sq/natfl049.jpg' }
-          .col-xs-4.col-sm-3.col-md-2.col-lg-2
-            %a{ href: '#', data-texture: 'img/pattern/pa048.jpg' }
-              %img.texture.img-thumbnail.img-responsive{ src: 'img/pattern/sq/pa048.jpg' }
-          .col-xs-4.col-sm-3.col-md-2.col-lg-2
-            %a{ href: '#', data-texture: 'img/pattern/water006.jpg' }
-              %img.texture.img-thumbnail.img-responsive{ src: 'img/pattern/sq/water006.jpg' }
-          .col-xs-4.col-sm-3.col-md-2.col-lg-2
-            %a{ href: '#', data-texture: 'img/pattern/water015.gif' }
-              %img.texture.img-thumbnail.img-responsive{ src: 'img/pattern/sq/water015.gif' }
-
       %textures
-        %texture
-        %texture
-        %texture
-        %texture
-        %texture
+        %texture{ src: 'img/texture/cloth025.jpg' }
+        %texture{ src: 'img/texture/rock.png' }
+        %texture{ src: 'img/texture/natfl003.jpg' }
+        %texture{ src: 'img/texture/natfl013.jpg' }
+        %texture{ src: 'img/texture/natfl049.jpg' }
+        %texture{ src: 'img/texture/pa048.jpg' }
+        %texture{ src: 'img/texture/water006.jpg' }
+        %texture{ src: 'img/texture/water015.gif' }
 
       %h2 Generated stereogram
       %img#stereogram-image.img-responsive.center-block
