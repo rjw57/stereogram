@@ -6,9 +6,14 @@ css/main.css
 
 js/main.js
 ----------------
-/home/rjw57/git/magic-eye-creator/vendor/require/require.js
 /home/rjw57/git/magic-eye-creator/vendor/angular/angular.js
-/home/rjw57/git/magic-eye-creator/lib/magiceye.js
-/home/rjw57/git/magic-eye-creator/lib/textures-component.js
+/home/rjw57/git/magic-eye-creator/lib/stereogram-engine.js
+/home/rjw57/git/magic-eye-creator/lib/stereogram.js
 /home/rjw57/git/magic-eye-creator/lib/stereogram-app.js
+/home/rjw57/git/magic-eye-creator/lib/textures-component.js
 js/main.js
+
+js/stereogram-worker.js
+----------------
+/home/rjw57/git/magic-eye-creator/lib/stereogram-engine.js
+js/stereogram-worker.js
