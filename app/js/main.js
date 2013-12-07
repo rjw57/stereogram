@@ -4,7 +4,7 @@
 // (see also call to resumeBootstrap in require() below)
 window.name = "NG_DEFER_BOOTSTRAP!";
 
-require(['angular'], function(angular, magiceye) {
+require(['angular', 'lib/stereogram-app', 'lib/textures-component'], function(angular) {
   'use strict';
   angular.resumeBootstrap();
 });
