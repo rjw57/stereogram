@@ -1,5 +1,5 @@
 !!! 5
-%html
+%html{ ng-app: 'stereogram-app' }
   %head
    %title Magic Eye Generator
     %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1.0' }
@@ -7,10 +7,10 @@
   %body
     .container
       %h2 Background texture
-      / Rationale for grid. Thumbnail images are 128x128 px which, with a 30px
-      / gutter and 5 px border, turns into a horizontal width of arount 170px. On
-      / a small screen, 750 px, there is room for around 4 per row. On a large
-      / screen, 1170 px, about 6 per-row.
+      -# Rationale for grid. Thumbnail images are 128x128 px which, with a 30px
+      -# gutter and 5 px border, turns into a horizontal width of arount 170px. On
+      -# a small screen, 750 px, there is room for around 4 per row. On a large
+      -# screen, 1170 px, about 6 per-row.
       .container.texture-group{ data-group: 'texture' }
         .row
           .col-xs-4.col-sm-3.col-md-2.col-lg-2
@@ -38,6 +38,8 @@
             %a{ href: '#', data-texture: 'img/pattern/water015.gif' }
               %img.texture.img-thumbnail.img-responsive{ src: 'img/pattern/sq/water015.gif' }
 
+      %textures{ src: 'app/img/pattern/index.json' } 
+
       %h2 Generated stereogram
       %img#stereogram-image.img-responsive.center-block
 
@@ -49,5 +51,5 @@
         %p.text-muted
           %a{ href: 'https://github.com/rjw57/stereogram' } Source code is available on Github
 
-    / Load JavaScript for main page
+    -# Load JavaScript for main page
     %script{ src: 'js/main.js' }

@@ -4,9 +4,13 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
 
     haml: {
-      index: {
-        files: { 'build/index.html': 'app/index.html.haml' },
+      app: {
+        files: [ { expand: true, cwd: 'app/', src: '*.haml', dest: 'build/', ext: '.html' } ],
       },
+
+      templates: {
+        files: [ { expand: true, src: 'templates/*.haml', dest: 'build/', ext: '.html' } ],
+      }
     },
 
     copy: {
@@ -27,10 +31,12 @@ module.exports = function(grunt) {
             jquery: '../../vendor/jquery/jquery-2.0.3',
             bootstrap: '../../vendor/bootstrap/js/bootstrap',
             requireLib:  '../../vendor/require/require',
+            angular:  '../../vendor/angular/angular',
             lib: '../../lib',
           },
           shim: {
             bootstrap: { deps: ['jquery'] },
+            angular: { exports: 'angular' },
           },
           optimize: 'uglify2',
           generateSourceMaps: true,
