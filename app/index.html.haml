@@ -4,10 +4,10 @@
    %title Magic Eye Generator
     %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1.0' }
     %link{ rel: 'stylesheet', href: 'css/main.css' }
-  %body
+  %body{ ng-controller: 'StereogramCtrl' }
     .container
       %h2 Background texture
-      %textures
+      %textures{ ng-model: 'textureUrl' }
         %texture{ src: 'img/texture/cloth025.jpg' }
         %texture{ src: 'img/texture/rock.png' }
         %texture{ src: 'img/texture/natfl003.jpg' }
@@ -18,10 +18,10 @@
         %texture{ src: 'img/texture/water015.gif' }
 
       %h2 Generated stereogram
-      %img#stereogram-image.img-responsive.center-block
+      %img#stereogram-image.img-responsive.center-block{ ng-src: '{{ stereogramUrl }}' }
 
       %h2 Depth image
-      %img#depth-image.img-responsive.center-block{ src: 'img/depth/bottles.jpg' }
+      %img#depth-image.img-responsive.center-block{ ng-src: '{{ depthImageUrl }}' }
 
     #footer
       .container
