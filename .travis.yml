@@ -4,6 +4,6 @@ node_js:
   - '0.10'
 before_script:
   - 'gem update --system'
-  - 'gem install compass'
+  - 'gem install compass haml'
   - 'npm install -g bower grunt-cli'
   - 'bower install'
