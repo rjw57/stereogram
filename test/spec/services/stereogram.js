@@ -14,4 +14,8 @@ describe('Service: stereogram', function () {
   it('should exist', function() {
     expect(stereogram).not.toBeUndefined();
   });
+
+  it('should export renderIntoImageData function', function() {
+    expect(stereogram.renderIntoImageData).not.toBeUndefined();
+  });
 });
