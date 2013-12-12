@@ -41,7 +41,7 @@ describe('Service: stereogram', function () {
     expect(dest).toBeTruthy();
 
     stereogram.renderIntoImageData(depth, tex, dest);
-  }); 
+  });
 
   it('should only write data from texture image to output', function() {
     var
