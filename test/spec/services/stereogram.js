@@ -10,7 +10,7 @@ describe('Service: stereogram', function () {
     var data = ctx.createImageData(width, height);
 
     // Initialise data to 0x70
-    for(var i in data.data) { data[i] = 0x70; }
+    for(var i=0; i<data.data.length; ++i) { data[i] = 0x70; }
 
     return data;
   };
@@ -50,13 +50,13 @@ describe('Service: stereogram', function () {
       dest = createImageData(40,40),
       i;
 
-    for(i in tex.data) {
+    for(i=0; i<tex.data.length; ++i) {
       tex.data[i] = 10 + (i % 10);
     }
 
     stereogram.renderIntoImageData(depth, tex, dest);
 
-    for(i in dest.data) {
+    for(i=0; i<dest.data.length; ++i) {
       expect(dest.data[i]).toBeGreaterThan(9);
       expect(dest.data[i]).toBeLessThan(20);
     }
