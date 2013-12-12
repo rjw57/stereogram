@@ -4,6 +4,7 @@ angular.module('stereogramApp')
   .directive('texturegroup', function() {
     return {
       scope: { },
+      restrict: 'EA',
       template:
         '<div class="texture-group container">' +
           '<div class="row" ng-transclude></div>' +
@@ -14,6 +15,7 @@ angular.module('stereogramApp')
   .directive('texture', function() {
     return {
       scope: { src: '@' },
+      restrict: 'EA',
       template:
         '<div class="texture" ng-class="{selected: selected}">' +
           '<a href="" ng-click="selected = true"><div class="texture-frame">' +

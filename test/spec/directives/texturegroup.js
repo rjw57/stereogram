@@ -16,7 +16,8 @@ describe('directive: textures', function() {
   }));
 
   it('replaces <texturegroup> element with a div with texture-group class', function() {
-    var element = $compile('<texturegroup></texturegroup>')($rootScope);
+    var element = $compile('<div texturegroup></div>')($rootScope);
+    console.log(element);
     expect(element.html()).toMatch('class="[^"]*texture-group[^"]*"');
   });
 });
