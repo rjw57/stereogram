@@ -1,0 +1,14 @@
+// Set up grid for texture group
+.texture-group .texture {
+  @extend .col-xs-4;
+  @extend .col-sm-3;
+  @extend .col-md-2;
+  @extend .col-lg-2;
+}
+
+.texture-group .texture .texture-frame {
+  @extend .img-thumbnail;
+}
+
+.texture-group .texture .texture-frame .texture-swatch {
+};
