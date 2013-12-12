@@ -1,0 +1,23 @@
+.container
+  %h2 Background texture
+
+  %textures{ ng: { model: 'textureUrl' } }
+    %texture{ src: 'img/texture/cloth025.jpg' }
+    %texture{ src: 'img/texture/rock.png' }
+    %texture{ src: 'img/texture/natfl003.jpg' }
+    %texture{ src: 'img/texture/natfl013.jpg' }
+    %texture{ src: 'img/texture/natfl049.jpg' }
+    %texture{ src: 'img/texture/pa048.jpg' }
+    %texture{ src: 'img/texture/water006.jpg' }
+    %texture{ src: 'img/texture/water015.gif' }
+
+  %h2 Generated stereogram
+  %img#stereogram-image.img-responsive.center-block{ ng: { src: '{{ stereogramUrl }}' } }
+
+  %h2 Depth image
+  %img#depth-image.img-responsive.center-block{ ng: { src: '{{ depthImageUrl }}' } }
+
+.footer
+  .container
+    %p.text-muted
+      %a{ href: 'https://github.com/rjw57/stereogram' } Source code is available on Github

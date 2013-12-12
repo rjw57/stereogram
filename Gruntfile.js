@@ -46,11 +46,16 @@ module.exports = function (grunt) {
       gruntfile: {
         files: ['Gruntfile.js']
       },
+      haml: {
+        files: ['<%= yeoman.app %>/{,*/}*.haml'],
+        tasks: ['newer:haml:compile']
+      },
       livereload: {
         options: {
           livereload: '<%= connect.options.livereload %>'
         },
         files: [
+          '<%= yeoman.app %>/{,*/}*.haml',
           '<%= yeoman.app %>/{,*/}*.html',
           '.tmp/styles/{,*/}*.css',
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
@@ -140,9 +145,9 @@ module.exports = function (grunt) {
       }
     },
 
-    
 
-    
+
+
     // Compiles Sass to CSS and generates necessary files if requested
     compass: {
       options: {
@@ -229,6 +234,7 @@ module.exports = function (grunt) {
       dist: {
         options: {
           // Optional configurations that you can uncomment to use
+          // collapseWhitespace: true,
           // removeCommentsFromCDATA: true,
           // collapseBooleanAttributes: true,
           // removeAttributeQuotes: true,
@@ -240,6 +246,11 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.app %>',
+          src: ['*.html', 'views/*.html'],
+          dest: '<%= yeoman.dist %>'
+        },{
+          expand: true,
+          cwd: '.tmp/',
           src: ['*.html', 'views/*.html'],
           dest: '<%= yeoman.dist %>'
         }]
@@ -298,19 +309,35 @@ module.exports = function (grunt) {
       }
     },
 
+    // Compile HAML files to HTML
+    haml: {
+      compile: {
+        files: [ {
+          expand: true,
+          cwd: '<%= yeoman.app %>',
+          src: '{,*/}*.haml',
+          dest: '.tmp/',
+          ext: '.html',
+        } ],
+      },
+    },
+
     // Run some tasks in parallel to speed up the build process
     concurrent: {
       server: [
         'compass:server',
-        'copy:styles'
+        'copy:styles',
+        'haml:compile',
       ],
       test: [
         'compass',
-        'copy:styles'
+        'copy:styles',
+        'haml:compile',
       ],
       dist: [
         'compass:dist',
         'copy:styles',
+        'haml:compile',
         'imagemin',
         'svgmin',
         'htmlmin'
@@ -351,7 +378,6 @@ module.exports = function (grunt) {
       }
     }
   });
-
 
   grunt.registerTask('serve', function (target) {
     if (target === 'dist') {
