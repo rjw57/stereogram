@@ -2,9 +2,7 @@
 
 angular.module('stereogramApp')
   .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+    $scope.depthImageUrl = '';
+    $scope.textureImageUrl = '';
+    $scope.stereogramImageUrl = '';
   });

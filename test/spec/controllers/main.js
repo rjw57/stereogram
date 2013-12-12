@@ -16,7 +16,9 @@ describe('Controller: MainCtrl', function () {
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(scope.awesomeThings.length).toBe(3);
+  it('should attach an empty depth, stereogram and texture URL to the scope', function () {
+    expect(scope.depthImageUrl).toBe('');
+    expect(scope.textureImageUrl).toBe('');
+    expect(scope.stereogramImageUrl).toBe('');
   });
 });
