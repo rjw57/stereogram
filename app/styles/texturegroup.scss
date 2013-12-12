@@ -1,3 +1,7 @@
+$icon-font-path: "/bower_components/sass-bootstrap/fonts/";
+
+@import 'sass-bootstrap/lib/bootstrap';
+
 // Set up grid for texture group
 .texture-group .texture {
   @extend .col-xs-4;
@@ -8,6 +12,10 @@
 
 .texture-group .texture .texture-frame {
   @extend .img-thumbnail;
+}
+
+.texture-group .texture.selected .texture-frame {
+  background-color: $component-active-bg;
 }
 
 // A responsive square aspect ratio element
