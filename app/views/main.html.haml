@@ -1,21 +1,21 @@
 .container
   %h2 Background texture
 
-  %texturegroup{ ng: { model: 'textureUrl' } }
-    %texture{ src: 'img/texture/cloth025.jpg' }
-    %texture{ src: 'img/texture/rock.png' }
-    %texture{ src: 'img/texture/natfl003.jpg' }
-    %texture{ src: 'img/texture/natfl013.jpg' }
-    %texture{ src: 'img/texture/natfl049.jpg' }
-    %texture{ src: 'img/texture/pa048.jpg' }
-    %texture{ src: 'img/texture/water006.jpg' }
-    %texture{ src: 'img/texture/water015.gif' }
+  %div{ x: { texturegroup: '', ng: { model: 'textureUrl' } } }
+    %div{ x: { texture: '', src: 'images/textures/cloth025.jpg' } }
+    %div{ x: { texture: '', src: 'images/textures/rock.png' } }
+    %div{ x: { texture: '', src: 'images/textures/natfl003.jpg' } }
+    %div{ x: { texture: '', src: 'images/textures/natfl013.jpg' } }
+    %div{ x: { texture: '', src: 'images/textures/natfl049.jpg' } }
+    %div{ x: { texture: '', src: 'images/textures/pa048.jpg' } }
+    %div{ x: { texture: '', src: 'images/textures/water006.jpg' } }
+    %div{ x: { texture: '', src: 'images/textures/water015.gif' } }
 
   %h2 Generated stereogram
-  %img#stereogram-image.img-responsive.center-block{ ng: { src: '{{ stereogramUrl }}' } }
+  %img#stereogram-image.img-responsive.center-block{ x: { ng: { src: '{{ stereogramUrl }}' } } }
 
   %h2 Depth image
-  %img#depth-image.img-responsive.center-block{ ng: { src: '{{ depthImageUrl }}' } }
+  %img#depth-image.img-responsive.center-block{ x: { ng: { src: '{{ depthImageUrl }}' } } }
 
 .footer
   .container

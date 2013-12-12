@@ -3,8 +3,6 @@
 angular.module('stereogramApp')
   .directive('texturegroup', function() {
     return {
-      restrict: 'E',
-      replace: false,
       scope: { },
       template:
         '<div class="texture-group container">' +
@@ -15,9 +13,7 @@ angular.module('stereogramApp')
   })
   .directive('texture', function() {
     return {
-      restrict: 'E',
       scope: { src: '@' },
-      replace: false,
       template:
         '<div class="texture" ng-class="{selected: selected}">' +
           '<a href="" ng-click="selected = true"><div class="texture-frame">' +
